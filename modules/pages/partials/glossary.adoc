@@ -1,0 +1,40 @@
+= Glossary
+:page-aliases:
+:page-topic-type: reference
+:description: Unpicking the tangled alphabet soup of the Capella Columnar Platform, from an SDK perspective.
+
+
+[abstract]
+{description}
+
+
+
+Couchbase Capella offers several services, and many advanced features, which we document here, in the Columnar SDK documentation.
+Below you will find short definitions of many Couchbase-related terms, with links to the pages that describe them in more detail, or show practical examples of their use.
+In particular, we look to define terms that may -- of necessity -- carry slight variations of meaning from their Capella operational cluster use.
+
+
+// Forms a sort of index of links
+
+
+TODO - replace below incorrect item, with several correct ones...
+
+* xref:concept-docs:collections.adoc[Collections] -- from Server 7.0 (and available as a xref:6.6@server:developer-preview:collections/collections-overview.adoc[Developer Preview] in Couchbase Server 6.5 and 6.6), _Collections_ allow groupings of documents beneath the Bucket level.
+Bucket items can optionally be assigned to different collections according to content type.
+
+
+
+
+
+
+== Further Reading
+
+Glossaries are available for:
+
+* xref:server:learn:glossary.adoc[Couchbase Server]
+* xref:java-sdk:reference:glossary.adoc[Couchbase operational SDKs]
+* xref:server:eventing:eventing-Terminologies.adoc[Couchbase Eventing Service]
+* xref:couchbase-lite:android:refer/java-android-refer-glossary.adoc[Couchbase Lite (Android)]
+* xref:sync-gateway:ROOT:refer/refer-sgw-glossary.adoc[Sync Gateway]
+
+The Server and SDK Glossaries takes the form of an index, linking to other pages, in the same manner as this page.

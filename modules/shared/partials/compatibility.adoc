@@ -1,0 +1,145 @@
+= Compatibility
+:description: Platform compatibility, and features available in different SDK versions, and compatibility between Server and SDK. \
+Plus notes on Cloud, networks, and AWS Lambda.
+:page-aliases: ROOT:overview,ROOT:compatibility-versions-features,compatibility-versions-features
+:page-toclevels: 3
+:table-caption!:
+
+
+[abstract]
+{description}
+
+
+The 1.0 SDK requires Java 17 or later to be installed.
+We recommend using the most recent long-term support (LTS) version of OpenJDK.
+
+TIP: Remember to keep your Java installation up to date with the latest patches.
+
+
+
+
+== Platform Compatibility
+
+
+=== JDK Version Compatibility
+
+// tag::jdk-version[]
+The {name-sdk} is tested with Oracle JDK and OpenJDK.
+Other JDK implementations might work but are not tested and are unsupported.
+We recommend running the latest LTS version (i.e. at the time of writing JDK 21) with the highest patch version available.
+
+The following JDK releases are supported:
+
+* https://adoptium.net/[OpenJDK 21 with HotSpot JVM] (recommended)
+* https://adoptium.net/[OpenJDK 17 with HotSpot JVM]
+* https://www.oracle.com/java/technologies/downloads/#jdk17[Oracle JDK 17]
+
+Please make sure you run on one of the latest patch releases, since they provide stability improvements and security fixes in general.
+// end::jdk-version[]
+
+
+
+=== OS Compatibility
+
+// tag::os-compat-jvm[]
+In general, the JVM eliminates concerns about underlying OS compatibility, 
+and Couchbase JVM SDKs can be expected to run on all of the Operating Systems supported by xref:{version-server}@server:install:install-platforms.adoc[Couchbase Server].
+
+The {name-sdk} is tested and supported on the following OSs and platforms:
+
+****
+[discrete]
+=== GNU/Linux
+
+* Amazon Linux 2 & AL2023.
+* Red Hat Enterprise Linux 8 & 9;
+* Oracle Linux 8 & 9.
+* Ubuntu (LTS) 20.04 (_Focal_) & 22.04 (_Jammy_).
+* Debian 10 (_Buster_), 11 (_Bullseye_), and Debian 12 (_Bookworm_).
+* SUSE Enterprise Linux 12 & 15
+// * Alpine Linux 3.18 (_Oracle JDK only_) -- but see <<alpine-linux-compatibility, workaround note below>>.
+
+[discrete]
+=== Microsoft Windows
+
+* Microsoft Windows 10 & 11;
+* Windows Server 2019 & 2022.
+
+[discrete]
+=== Mac OS X
+
+The current and previous two releases of OS X.
+At time of writing (October 2024): 14 (Sonoma), 13 (Ventura), and 12 (Monterey).
+M1 ARM  architecture is fully supported in the {name-sdk}.
+
+[discrete]
+=== ARM Processor Support
+
+AWS Amazon Graviton, Apple M1 ARM processors, and ARMv8 on Ubuntu 20.04+.
+****
+
+The JVM ColumnarSDKs should also be expected to run on other commonly-available GNU/Linux distributions which support an appropriate JDK, but not all combinations can be tested -- notable exceptions are listed below.
+// end::os-compat-jvm[]
+
+
+
+
+
+
+==== Alpine Linux Compatibility
+
+The https://netty.io[Netty] I/O library used by our JVM SDKs supports native optimizations to achieve higher throughput and lower latency 
+-- which the SDK enables by default. 
+Those modules are compiled against `glibc` and Alpine Linux uses `musl` instead --
+so the {name-sdk} is unable to complete bootstrapping on this platform.
+
+Because Alpine Linux does not have the `glibc` support needed,
+we highly recommend that you seek an alternative distribution where possible. 
+If that is not a option, then a possible workaround that can be applied is as follows:
+
+* Disable native IO and native TLS by setting both the `ioEnvironment.enableNativeIo` and `security.enableNativeTls` client settings to false, as in this example:
++
+[source,java]
+----
+Cluster cluster = Cluster.connect(
+  connectionString,
+  ClusterOptions.clusterOptions(username, password)
+    .environment(env -> env
+      .ioEnvironment(it -> it.enableNativeIo(false))
+      .securityConfig(it -> it.enableNativeTls(false))
+    )
+);
+----
+
+* Alternatively, disable it in Netty itself via the following system properties:
++
+[source,shell]
+----
+-Dcom.couchbase.client.core.deps.io.netty.transport.noNative=true
+-Dcom.couchbase.client.core.deps.io.netty.handler.ssl.noOpenSsl=true
+----
+
+The downside of these workarounds is potentially reduced performance, which can be determined through benchmarking and profiling.
+
+
+
+
+
+
+// tag::api-version[]
+.Columnar SDK API Versions
+[cols="20,20"]
+|===
+|  |  API 1.0
+
+
+| xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs] |
+| 1.0
+
+| xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK Docs] |  
+| 1.0
+
+| xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] 
+| 1.0
+
+// end::api-version[]
