@@ -78,7 +78,8 @@ M1 ARM  architecture is fully supported in the {name-sdk}.
 AWS Amazon Graviton, Apple M1 ARM processors, and ARMv8 on Ubuntu 20.04+.
 ****
 
-The JVM ColumnarSDKs should also be expected to run on other commonly-available GNU/Linux distributions which support an appropriate JDK, but not all combinations can be tested -- notable exceptions are listed below.
+The JVM Columnar SDKs should also be expected to run on other commonly-available GNU/Linux distributions which support an appropriate JDK, but not all combinations can be tested.
+// -- notable exceptions are listed below.
 // end::os-compat-jvm[]
 
 
