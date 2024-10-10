@@ -516,7 +516,7 @@ This output is a possible indication that the DNS server in use does not support
 == Additional Steps
 
 * Check your IP is allowlisted in the https://docs.couchbase.com/cloud/index.html[Capella] UI as an Allowed IP (make sure to hit Save after adding it).
-* That you are using "couchbases://<hostname>" as your connection string, to allow DNS SRV.
+* That you are using "couchbases://<hostname>" as your connection string, and to allow DNS SRV.
 * That you are using a supported version of the {name-sdk} -- preferably the latest.
 // * That you have enabled TLS via `enableTls(true)`.
 * That the user you are connecting as has been created in Capella and has correct permissions for the collection that you are connecting to.
