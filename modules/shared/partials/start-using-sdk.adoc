@@ -9,7 +9,7 @@
 
 // tag::intro[]
 xref:columnar:intro:intro.adoc[Capella Columnar] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence. 
-Although maintaining some syntactic similarities with xref:home:sdk.adoc[the operational SDKs], The {name-sdk} is developed from the ground-up for Columnar's analytical use cases,
+Although maintaining some syntactic similarities with xref:home:sdk.adoc[the operational SDKs], the {name-sdk} is developed from the ground-up for Columnar's analytical use cases,
 and supports streaming APIs to handle large datasets.
 // end::intro[]
 
