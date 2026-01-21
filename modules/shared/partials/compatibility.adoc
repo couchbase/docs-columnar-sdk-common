@@ -18,13 +18,13 @@ TIP: Remember to keep your Java installation up to date with the latest patches.
 
 // tag::wrapper-no-mix[]
 [WARNING]
-.Don't Mix Columnar & Operational SDK.
+.Don't Mix Columnar & Operational SDKs.
 ====
-Do not combine the [{name_platform}] Columnar SDK with the [{name_platform}] Operational SDK on the same app server (or development machine).
+Do not combine the {name_platform} Columnar SDK with the {name_platform} Operational SDK on the same app server (or development machine).
 This combination is not tested and not supported.
 There may be problems with different versions of shared dependencies if you try this. This only applies to the Node.js and Python Columnar SDKs.
 
-Note, this does not apply to using our Enterprise Analytics SDKs with our Operational SDKs.
+Note, this does not apply to combining our Enterprise Analytics SDKs with our Operational SDKs.
 See the xref:home::analytics-sdk.adoc[Analytics SDK page] for a reminder of which Analytics SDK to use with which Analytics service.
 ====
 // end::wrapper-no-mix[]
