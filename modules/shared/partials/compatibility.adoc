@@ -182,6 +182,8 @@ The downside of these workarounds is potentially reduced performance, which can 
 |===
 |  |  API 1.0
 
+| xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs] |
+| 1.0
 
 | xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs] |
 | 1.0

@@ -23,7 +23,7 @@ so this page is a guide to the SDK docs, to help you to get the most from them.
 == Assumptions & Presumptions
 
 Couchbase is a complex and powerful product, with many components.
-The Columnar SDKs simply interact with Capella Columnar, not Couchbase Server and its various services --
+The Columnar SDKs simply interact with {oi-cloud-name}, not Couchbase Server and its various services --
 but some of that complexity spills across into the Columnar SDKs and their documentation.
 
 Some concepts, such as Role-Based Access Control, do need to be understood in greater depth -- 
@@ -81,7 +81,7 @@ and xref:concept-docs:nonjson.adoc[working with non-JSON data].
 
 * xref:concept-docs:querying-your-data.adoc[]
 
-The heart of the Columnar Service -- real-time OLAP querying, with Couchbase's familiar {sqlpp} query language.
+The heart of the {oi-cloud-name} Service -- real-time OLAP querying, with Couchbase's familiar {sqlpp} query language.
 
 ////
 For developers with an RDBMS, Couchbase's SQL implementation, {sqlpp}, makes querying familiar.
