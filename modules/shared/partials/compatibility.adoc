@@ -24,8 +24,8 @@ Do not combine the {name_platform} Columnar SDK with the {name_platform} Operati
 This combination is not tested and not supported.
 There may be problems with different versions of shared dependencies if you try this. This only applies to the Node.js and Python Columnar SDKs.
 
-Note, this does not apply to combining our Enterprise Analytics SDKs with our Operational SDKs.
-See the xref:home::analytics-sdk.adoc[Analytics SDK page] for a reminder of which Analytics SDK to use with which Analytics service.
+Note, this does not apply to combining our Operational Insights SDKs with our Operational SDKs.
+See the xref:home::operational-insights-sdk.adoc[Operational Insights SDK page] for a reminder of which Insights SDK to use with which Insights or Analytics service.
 ====
 // end::wrapper-no-mix[]
 
@@ -182,6 +182,8 @@ The downside of these workarounds is potentially reduced performance, which can 
 |===
 |  |  API 1.0
 
+| xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs] |
+| 1.0
 
 | xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs] |
 | 1.0

@@ -1,6 +1,6 @@
 = Hello Columnar -- {name-sdk} Quickstart Guide
 :page-toclevels: 2
-:description: Install, connect, try. A quick start guide to get you up and running with Columnar and the {name-sdk}.
+:description: Install, connect, try. A quick start guide to get you up and running with {oi-cloud-name} and the {name-sdk}.
 
 [abstract]
 {description}
@@ -8,8 +8,8 @@
 
 
 // tag::intro[]
-xref:columnar:intro:intro.adoc[Capella Columnar] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence. 
-Although maintaining some syntactic similarities with xref:home:sdk.adoc[the operational SDKs], the {name-sdk} is developed from the ground-up for Columnar's analytical use cases,
+xref:columnar:intro:intro.adoc[{oi-cloud-name}] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence. 
+Although maintaining some syntactic similarities with xref:home:sdk.adoc[the operational SDKs], the {name-sdk} is developed from the ground-up for {oi-cloud-name}'s analytical use cases,
 and supports streaming APIs to handle large datasets.
 // end::intro[]
 
